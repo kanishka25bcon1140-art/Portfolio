@@ -4,8 +4,7 @@ A responsive personal portfolio website built using **HTML, CSS, and JavaScript*
 
 ## 🚀 Live Demo
 
-🔗 **Live Website:** portfoliokanishka-eosin.vercel.app
-
+🔗 **Live Website:** https://portfoliokanishka-6fr5mfnnu-kanishkag525-4603s-projects.vercel.app
 ## 👩‍💻 About Me
 
 Hi! I'm **Kanishka Gupta**, a Computer Science Engineering student passionate about programming, web development, and learning new technologies.
