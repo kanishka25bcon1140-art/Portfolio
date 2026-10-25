@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Kanishka Gupta - BTech Student" />
+  <title>Kanishka Gupta - BTech Student - Personal Profile</title>
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="chatbot.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("portfolio-theme");
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (saved === "dark" || (!saved && prefersDark)) {
+          document.documentElement.classList.add("dark-mode");
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <p class="eyebrow">Personal Profile</p>
+    <h1>Kanishka Gupta</h1>
+    <p class="Graduation Student">BTech Student</p>
+  </header>
+
+  <main>
+    <section class="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>
+        I am a BTech Student at the University of Jaipur. I am currently pursuing my degree in Computer Science and
+        Engineering. I am interested in Web Development and Machine Learning.
+      </p>
+    </section>
+
+    <section class="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <ul>
+        <li>🌐 HTML-structuring web pages</li>
+        <li>🎨 CSS-styling and layouts</li>
+        <li>⚡ JavaScript-interactivity and logic</li>
+        <li>🔧 Git-version control and collaboration</li>
+      </ul>
+    </section>
+
+    <section class="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <div class="search-container">
+        <input type="search" id="projectSearch"
+          placeholder="Search projects by name or technology (e.g. Python, Quiz, Book)..."
+          aria-label="Search projects by name or technology" />
+        <p id="projectSearchStatus" class="search-status" role="status" aria-live="polite"></p>
+      </div>
+      <ul id="projectList">
+        <li>
+          <a href="https://github.com/kanishka25bcon1140-art/python-basics-1140">
+            Python Programs Collection
+          </a>
+          <p>
+            A collection of Python programs that cover various topics such as data structures, algorithms, and machine
+            learning.
+          </p>
+          <div class="project-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Algorithms</span>
+            <span class="tech-tag">Machine Learning</span>
+          </div>
+        </li>
+        <li>
+          <a href="https://github.com/kanishka25bcon1140-art/Messy-Python-Code-Improvement">
+            Messy Python Code Improvement
+          </a>
+          <p>The messy python code was improved using Cursor AI. The tool helped detect a logical error, suggest the
+            necessary changes, and verify the corrected program by checking its output.</p>
+          <div class="project-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Cursor AI</span>
+            <span class="tech-tag">Code Refactoring</span>
+          </div>
+        </li>
+        <li>
+          <a href="https://github.com/kanishka25bcon1140-art/Bug-Fixing-">
+            Bug Fixing Project
+          </a>
+          <p>An incorrect Python program was identified and corrected using Cursor AI. The tool helped detect a logical
+            error, suggest the necessary changes, and verify the corrected program by checking its output.</p>
+          <div class="project-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Cursor AI</span>
+            <span class="tech-tag">Bug Fixing</span>
+          </div>
+        </li>
+        <li>
+          <a href="https://github.com/kanishka25bcon1140-art/interactive-quiz-application">
+            Interactive Quiz
+          </a>
+          <p>An interactive quiz application that allows users to answer questions, check their scores, and test their
+            knowledge through a user-friendly interface.</p>
+          <div class="project-tags">
+            <span class="tech-tag">Quiz</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">HTML/CSS</span>
+          </div>
+        </li>
+        <li>
+          <a href="https://reading-list-u9tl-git-update-d5823f-kanishkag525-4603s-projects.vercel.app">
+            Reading List
+          </a>
+          <p>A Book Reading List Application helps users maintain and manage their reading lists through a simple,
+            user-friendly interface.</p>
+          <div class="project-tags">
+            <span class="tech-tag">Book</span>
+            <span class="tech-tag">Reading List</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Vercel</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <section id="weather">
+    <h2>Weather</h2>
+    <div class="weather-controls">
+      <input type="text" id="cityInput" placeholder="Enter a city (e.g., Jaipur, London, Tokyo)"
+        aria-label="City name for weather" />
+      <button id="weatherButton" type="button">
+        Get Weather
+      </button>
+    </div>
+    <div id="weatherResult" role="region" aria-live="polite">
+      Enter a city to see the weather.
+    </div>
+  </section>
+
+  <section id="aiChatSection" class="ai-chat">
+    <h2>Ask My AI Assistant</h2>
+    <p>
+      Ask questions about this portfolio, projects, skills, and weather application.
+    </p>
+    <div id="chatMessages" aria-live="polite"></div>
+    <div class="chat-controls">
+      <input type="text" id="userInput" placeholder="Ask a question..." aria-label="Ask the AI assistant a question" />
+      <button id="sendButton" type="button">
+        Send
+      </button>
+    </div>
+    <p id="chatStatus" role="status"></p>
+    <p class="chat-note">
+      AI assistant powered by Groq · Available for local interactive demo.
+    </p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p class="footer-info">Jaipur, India · kanishka525@gmail.com</p>
+      <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark or light mode" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true">🌙</span>
+        <span class="theme-text">Switch to Dark Mode</span>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Floating Theme Toggle at bottom of interface -->
+  <aside class="bottom-theme-dock" aria-label="Theme switcher">
+    <button id="floatingThemeToggle" class="theme-toggle-btn floating-toggle" type="button" aria-label="Toggle dark or light mode" aria-pressed="false">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+      <span class="theme-text">Switch to Dark Mode</span>
+    </button>
+  </aside>
+
+  <script src="config.js"></script>
+  <script src="chatbot.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

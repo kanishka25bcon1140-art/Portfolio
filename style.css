@@ -1,0 +1,647 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --red: #e31820;
+  --black: #111111;
+  --white: #ffffff;
+  --gray: #dedede;
+  --muted: #626262;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--white);
+  color-scheme: light;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark-mode {
+  background-color: #0f1013;
+  color-scheme: dark;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 72px);
+  background: var(--white);
+  color: var(--black);
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Bold, editorial-style page heading */
+.site-header {
+  padding: 52px 0 38px;
+  border-bottom: 1px solid var(--gray);
+}
+
+.site-header .eyebrow {
+  margin: 0 0 8px;
+  color: var(--red);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.site-header h1 {
+  max-width: 900px;
+  margin: 0;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: clamp(4.5rem, 13vw, 11rem);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.site-header .Graduation {
+  margin: 20px 0 0;
+  color: var(--red);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px 32px;
+  padding: 42px 0;
+}
+
+main section {
+  min-width: 0;
+}
+
+.about,
+.projects {
+  grid-column: 1 / -1;
+}
+
+h2 {
+  margin: 0 0 18px;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.about p {
+  max-width: 760px;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
+.skills ul,
+.projects ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skills li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray);
+  font-weight: 600;
+}
+
+.projects ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.projects li {
+  min-height: 190px;
+  padding: 22px;
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projects li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.projects li a {
+  color: var(--white);
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.projects li a:hover {
+  color: #ff6267;
+}
+
+.projects li p {
+  margin: 14px 0 0;
+  color: #d0d0d0;
+  font-size: 0.9rem;
+}
+
+/* Project Search */
+.search-container {
+  margin-bottom: 24px;
+}
+
+#projectSearch {
+  width: 100%;
+  max-width: 580px;
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  background: var(--white);
+  color: var(--black);
+  font: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.25s;
+}
+
+#projectSearch:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(227, 24, 32, 0.15);
+}
+
+.search-status {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  min-height: 1.2rem;
+  font-weight: 500;
+}
+
+/* Project Technology Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 18px;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: #25262c;
+  color: #ff8a8e;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid #3d3e48;
+}
+
+#weather,
+.ai-chat {
+  margin: 0 0 32px;
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid var(--gray);
+  border-radius: 6px;
+  background: var(--white);
+  transition: background-color 0.25s, border-color 0.25s;
+}
+
+#weather {
+  border-top: 8px solid var(--red);
+}
+
+.weather-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.weather-controls input {
+  flex: 1;
+  min-width: 200px;
+}
+
+#weather input,
+.chat-controls input {
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  background: var(--white);
+  color: var(--black);
+  font: inherit;
+  transition: border-color 0.2s, background-color 0.25s;
+}
+
+#weather input:focus,
+.chat-controls input:focus {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+button {
+  min-height: 46px;
+  padding: 11px 20px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--red);
+  color: var(--white);
+  font: 700 0.85rem "DM Sans", Arial, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+button:hover {
+  background: var(--black);
+}
+
+/* Weather Result Display Card */
+#weatherResult {
+  margin-top: 18px;
+  font-weight: 500;
+}
+
+.weather-card {
+  padding: 18px 20px;
+  background: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.weather-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.weather-icon {
+  width: 56px;
+  height: 56px;
+}
+
+.weather-city {
+  margin: 0;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.weather-condition {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.weather-details {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.weather-temp {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--red);
+  line-height: 1;
+}
+
+.weather-sub {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.weather-loading {
+  color: var(--muted);
+  font-style: italic;
+  margin: 0;
+}
+
+.weather-error {
+  color: #dc2626;
+  font-weight: 600;
+  margin: 0;
+}
+
+.weather-alert {
+  color: #d97706;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chat-note,
+#chatStatus {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Site Footer & Theme Toggles */
+.site-footer {
+  margin-top: 48px;
+  padding: 24px 0 60px;
+  border-top: 1px solid var(--gray);
+  transition: border-color 0.25s;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-info {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Theme Toggle Button Shared Styles */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 8px 18px;
+  border: 1px solid #d0d0d0;
+  border-radius: 30px;
+  background: #f1f2f6;
+  color: #1a1a1a;
+  font: 700 0.82rem "DM Sans", Arial, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.25s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(227, 24, 32, 0.25);
+}
+
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+.theme-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.theme-toggle-btn:hover .theme-icon {
+  transform: rotate(20deg) scale(1.15);
+}
+
+/* Floating Bottom Interface Dock */
+.bottom-theme-dock {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+}
+
+.floating-toggle {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 20px;
+}
+
+/* ============================================================
+   Dark Mode Theme System
+   ============================================================ */
+html.dark-mode,
+body.dark-mode {
+  background-color: #0f1013;
+  color: #f1f1f4;
+  color-scheme: dark;
+}
+
+body.dark-mode .site-header {
+  border-bottom-color: #24262e;
+}
+
+body.dark-mode .skills li {
+  border-bottom-color: #24262e;
+}
+
+body.dark-mode .search-status {
+  color: #9da3af;
+}
+
+body.dark-mode #projectSearch {
+  background: #1a1c23;
+  border-color: #333644;
+  color: #ffffff;
+}
+
+body.dark-mode #projectSearch:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(227, 24, 32, 0.25);
+}
+
+body.dark-mode input::placeholder {
+  color: #82889a;
+  opacity: 1;
+}
+
+body.dark-mode .projects li {
+  background: #18191f;
+  border: 1px solid #2a2c36;
+  color: #f1f1f4;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .projects li a {
+  color: #ffffff;
+}
+
+body.dark-mode .projects li a:hover {
+  color: #ff6267;
+}
+
+body.dark-mode .projects li p {
+  color: #a4a8b5;
+}
+
+body.dark-mode .tech-tag {
+  background: #252833;
+  color: #ff8a8e;
+  border-color: #383c4c;
+}
+
+body.dark-mode #weather,
+body.dark-mode .ai-chat {
+  background: #15161b;
+  border-color: #262832;
+  color: #f1f1f4;
+}
+
+body.dark-mode #weather input,
+body.dark-mode .chat-controls input {
+  background: #1d1f27;
+  border-color: #353846;
+  color: #ffffff;
+}
+
+body.dark-mode #weather input:focus,
+body.dark-mode .chat-controls input:focus {
+  outline-color: var(--red);
+}
+
+/* Ensure button hover in dark mode remains crisp & visible */
+body.dark-mode button:hover {
+  background: #b91017;
+  color: #ffffff;
+}
+
+body.dark-mode .weather-card {
+  background: #1d1f27;
+  border-color: #2e313e;
+}
+
+body.dark-mode .weather-city {
+  color: #ffffff;
+}
+
+body.dark-mode .weather-condition,
+body.dark-mode .weather-sub,
+body.dark-mode .weather-loading {
+  color: #a1a6b4;
+}
+
+body.dark-mode .weather-alert {
+  color: #fbbf24;
+}
+
+body.dark-mode .weather-error {
+  color: #f87171;
+}
+
+body.dark-mode #chatMessages {
+  background: #111216;
+  border-color: #272933;
+}
+
+body.dark-mode .chat-assistant {
+  background: #22242e;
+  color: #e4e7ec;
+}
+
+body.dark-mode .chat-user {
+  background: #1e3a8a;
+  color: #ffffff;
+}
+
+body.dark-mode .chat-note,
+body.dark-mode #chatStatus {
+  color: #9499a6;
+}
+
+body.dark-mode .site-footer {
+  border-top-color: #24262e;
+}
+
+body.dark-mode .footer-info {
+  color: #9499a6;
+}
+
+body.dark-mode .theme-toggle-btn {
+  background: #1f2129;
+  color: #f1f1f4;
+  border-color: #353847;
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+  background: var(--red);
+  color: #ffffff;
+  border-color: var(--red);
+  box-shadow: 0 4px 14px rgba(227, 24, 32, 0.4);
+}
+
+body.dark-mode .floating-toggle {
+  background: rgba(26, 28, 36, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.55);
+  color: #f1f1f4;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about,
+  .projects {
+    grid-column: auto;
+  }
+
+  .projects ul {
+    grid-template-columns: 1fr;
+  }
+
+  .projects li {
+    min-height: 150px;
+  }
+
+  #weather input,
+  .chat-controls input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bottom-theme-dock {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .floating-toggle {
+    padding: 8px 14px;
+    font-size: 0.78rem;
+  }
+}
